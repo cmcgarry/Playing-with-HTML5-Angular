@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Playing with HTML5</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="page-container">
+  
+	<!-- top navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    	<div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="#">Playing with HTML5</a>
+    	</div>
+      
+      <div id="display" style="float:right;">
+    Your Status: <span data-bind="text get_status"></span>
+   
+</div>
+    </nav>
+      
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+        
+        <!--sidebar-->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
+            <ul class="nav" id="sidebar-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">Current Studies</a></li>
+              <li><a href="#html5tech">HTML5 Tech Used</a></li>
+              <li><a href="#contact">Contact</a></li>
+              
+            </ul>
+           </div>
+        </div><!--/sidebar-->
+  	
+        <!--/main-->
+        
+        <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+          <div class="row">
+           	 <div class="col-sm-6">
+             
+             
+             <div class="panel panel-default">
+                  <div class="panel-heading">
+                  
+                  <div class="info-popover"> 
+
+<a href="#" style="float:right;" class="btn" data-toggle="popover" tabindex="2" data-trigger="focus" data-content="Status updates using Backbone.modelbinding.js. Currently doesn't save as I didn't have time to add backbone.localStorage-min.js"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="float:right; color:red"></span></a>
+</div>
+
+<h4>Status</h4></div>
+                    <div class="panel-body">
+
+<form id="status-form" class="form-horizontal" role="form">
+	<div class="form-group" style="padding:14px;">
+  	<textarea id="get_status" class="form-control" placeholder="Update your status"></textarea>
+	</div>
+<button class="btn btn-success pull-right" type="button">Post</button>
+   
+</form>
+
+                </div><!--/panel-body-->
+                </div><!-- /panel -->
+                
+                          
+                <div class="panel panel-default">
+                   <div class="panel-heading">
+                   
+<h4>What is this?</h4>
+
+										</div>
+										<div class="panel-body">                      
+                      <div class="clearfix"></div>
+<p>This is a one page application using a responsive dashboard utilizing HTML5 allowing me to experiment with different web technologies.
+</p>
+<p>
+Hover over the <span class="glyphicon glyphicon-info-sign" style="color:red"></span> to learn more about each app.
+</p>
+ <p style="color:red; font-size:12px;">
+<em>To Daniel with Mobiquity</em> -
+I put this together over the last couple days as a demonstration for you to look over. I tend to learn coding by backward engineering existing code as you can see where I used tutorials to put together the pieces.
+</p>     
+                      
+                    </div><!--/panel-body-->
+                 </div><!--/panel-->
+                 
+                 
+                
+                
+            </div><!--/col End of Left column -->
+            
+            <div class="col-sm-6">
+            
+            <div class="panel panel-default">
+            
+                  <div class="panel-heading">
+
+      <div class="info-popover"> 
+
+<a href="#" style="float:right;" class="btn" data-toggle="popover" tabindex="2" data-trigger="focus" data-content="To Do list using Backbone based on <a href='http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/'>this tutorial</a>"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="float:right; color:red"></span></a>
+</div>
+                
+                  
+                  <h4><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>  Tasks</h4></div>
+                    <div class="panel-body">
+                      <div class="list-group">
+                       
+<div id="todoapp">
+<header id="header">
+<input id="new-todo" placeholder="Add task" autofocus>
+
+<hr />
+
+
+<ul class="nav nav-tabs" style="font-size:11px;">
+  <li role="presentation" class="active"><a href="#/">All</a></li>
+  <li role="presentation"><a href="#/pending">Pending</a></li>
+  <li role="presentation"><a href="#/completed">Completed</a></li>
+</ul>
+
+
+</header>
+<p>
+<ul id="todo-list"></ul>
+</p>
+</div>
+
+<!-- Templates -->
+<script type="text/template" id="item-template">
+<div class="view">
+<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+<label><%- title %></label>
+<input class="edit" value="<%- title %>">
+<button type="button" class="btn btn-default btn-xs destroy" style="color:red; border:none; background:none;">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 
+</button>
+</div>
+</script>
+                      
+                      </div>
+                    </div><!--/panel-body-->
+                </div><!--/panel-->
+             
+              
+                  <div class="panel panel-default">
+                  <div class="panel-heading"><h4>Get on the List</h4></div>
+                    <div class="panel-body">
+                     <form class="form">
+                      
+                      <div class="input-group text-center">
+                      <input type="text" class="form-control input-lg" title="Don't worry. We hate spam, and will not share your email with anyone." placeholder="Enter your email address">
+                        <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
+                      </div>
+                    </form>
+              </div><!--/panel-body-->
+                </div><!-- /panel -->
+        
+               
+              
+                 
+              </div><!--/col-->
+          </div><!--/row-->
+          
+          <h1 id="about" style="padding-bottom:20px"></h1><!-- Spacer for the top nav bar -->
+          <h1 id="about_sub">Current Studies</h1>
+  
+          <div class="panel panel-default">
+          	
+   			<div class="panel-body">
+              
+           
+          
+          <p>Currently working through the following tutorials:</p>
+          
+          <p>Learn Backbone.js Completely source: <a href="http://javascriptissexy.com/learn-backbone-js-completely/">http://javascriptissexy.com/learn-backbone-js-completely/</a></p>
+          <p>Using this book as a resource: Addy Osmani’s <a href="http://addyosmani.github.com/backbone-fundamentals/" target="_blank">Developing Backbone.js Applications</a>
+             </div>
+          </div><!--/panel-->
+            
+    			<h1 id="html5tech" style="padding-bottom:20px"></h1><!-- Spacer for the top nav bar -->
+          <h1 id="html5tech_sub">HTML5 Tech Used</h1>
+          
+           <div class="panel panel-default">
+          	
+   			<div class="panel-body">
+          <div class="list-group">
+                <a href="http://getbootstrap.com/" target="_blank" class="list-group-item"><img src="images/bootstrap.jpg" width="25" height="25" alt="Bootstrap" />&nbsp;Twitter Bootstrap</a>
+                <a href="jquery.com" target="_blank" class="list-group-item">jQuery</a>
+                <a href="backbonejs.org" target="_blank" class="list-group-item">Backbone</a>
+              </div>
+                   
+         
+          </div>
+          </div><!--/panel-->
+                    
+          <h1 id="contact">Contact</h1>
+          
+          	<div class="panel panel-default">
+          		<div class="panel-body">
+          <p>
+          Collin McGarry
+          </p>
+          <ul>
+          <li>Facebook: <a href="https://www.facebook.com/collin.mcgarry" target="_blank">https://www.facebook.com/collin.mcgarry</a></li>
+          <li>Linkedin: <a href="https://www.linkedin.com/pub/collin-mcgarry/1a/711/375" target="_blank">https://www.linkedin.com/pub/collin-mcgarry/1a/711/375</a></li>
+          <li>Blog: <a href="tenguka-warriortech.blogspot.com" target="_blank">tenguka-warriortech.blogspot.com</a></li>
+          <li>Email: collinmcgarry@gmail.com</li>
+          </ul>
+          </p>
+         
+          	</div>
+          </div><!--/panel-->
+          
+          
+        </div><!--/.col-xs-12-->
+      </div><!--/.row-->
+    </div>
+  </div><!--/.container-->
+<!--/.page-container-->
+  
+<footer><!--footer-->
+  <div class="container">
+      	<div class="row">
+          <ul class="list-unstyled text-right">
+            <li class="col-sm-4 col-xs-6">
+              <a href="#">About</a>
+            </li>
+            
+          </ul>
+		</div><!--/row-->
+    </div><!--/container-->
+</footer>
+        
+
+    
+ <!-- ========= -->
+<!-- Libraries -->
+<!-- ========= -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/underscore-min.js" type="text/javascript"></script>
+<script src="js/backbone-min.js" type="text/javascript"></script>
+<script src="js/backbone.localStorage-min.js" type="text/javascript"></script>
+<script src="js/scripts.js" type="text/javascript"></script>
+<script src="js/todo.js" type="text/javascript"></script>
+<script src="js/json2.js" type="text/javascript"></script>
+<script src="js/backbone.modelbinding.js" type="text/javascript"></script>
+<script src="js/status.js" type="text/javascript"></script>
+		
+    
+    
+  
+	</body>
+</html>
