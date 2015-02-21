@@ -1,3 +1,3 @@
-# Playing-with-HTML5
+### Playing with HTML5 - Angular ###
 
-This is a one page application using a responsive dashboard utilizing HTML5 allowing me to experiment with different web technologies. 
+Must have Grunt, Node, Bower, and Mongo installed
