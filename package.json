@@ -1,0 +1,28 @@
+{
+  "name": "Paths_Web",
+  "version": "1.0.0",
+  "description": "Internal web application to display \"paths\" to Mobiquity employees",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mobiquity/Paths_Web"
+  },
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/Mobiquity/Paths_Web/issues"
+  },
+  "homepage": "https://github.com/Mobiquity/Paths_Web",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "less": "^2.4.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.12.0",
+    "express": "^4.11.2",
+    "mongoose": "^3.8.23",
+    "passport": "^0.2.1",
+    "passport-google-oauth2": "^0.1.6"
+  }
+}

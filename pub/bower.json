@@ -1,0 +1,26 @@
+{
+    "name": "Mobiquity Paths",
+    "version": "0.0.1",
+    "homepage": "https://github.com/Mobiquity/Paths_Web",
+    "authors": [
+        "tkayali <tkkayali@gmail.com>"
+    ],
+    "description": "Internal web application to display \"paths\" to Mobiquity employees",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "1.3.13",
+        "angular-ui-router": "~0.2.13",
+        "angular-bootstrap": "~0.12.0"
+    },
+    "resolutions": {
+        "angular": "1.3.13"
+    }
+}
